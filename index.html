@@ -1,121 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Movie Central</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #121212;
-            color: #eee;
-            font-family: Arial, sans-serif;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            min-height: 100vh;
-            margin: 0;
-            padding: 40px 20px;
-        }
-
-        h1 {
-            margin: 0 0 30px;
-            font-weight: 700;
-            font-size: 2.5rem;
-            color: #fff;
-        }
-
-        .movie-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-
-            width: 100%;
-            max-width: 800px;
-        }
-
-        .movie-item {
-            width: 180px;
-            text-align: center;
-            cursor: pointer;
-
-            transition:
-                transform 0.2s ease,
-                opacity 0.2s ease;
-        }
-
-        .movie-item:hover {
-            transform: scale(1.05);
-        }
-
-        .movie-item:active {
-            transform: scale(0.97);
-        }
-
-        .movie-item img {
-            display: block;
-
-            width: 180px;
-            height: 270px;
-
-            object-fit: cover;
-            border-radius: 8px;
-
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
-        }
-
-        .movie-title {
-            margin-top: 10px;
-
-            font-size: 1.1rem;
-            font-weight: 600;
-
-            color: #fff;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Central</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #121212;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0 0 30px;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    .movie-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .movie-item {
+      width: 180px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .movie-item:hover {
+      transform: scale(1.05);
+    }
+    .movie-item img {
+      display: block;
+      width: 180px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    }
+    .movie-title {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+  </style>
 </head>
-
 <body>
-
-    <h1>Movie Central</h1>
-
-    <div class="movie-container">
-
-        <div
-            class="movie-item"
-            onclick="openMovie()"
-            role="button"
-            tabindex="0"
-            onkeydown="if (event.key === 'Enter' || event.key === ' ') openMovie()"
-        >
-            <img
-                src="logo.png"
-                alt="Numbers thumbnail"
-            >
-
-            <div class="movie-title">
-                Numbers
-            </div>
-        </div>
-
+  <h1>Movie Central</h1>
+  <div class="movie-container">
+    <!-- Numbers -->
+    <div class="movie-item" onclick="openMovie('969681')">
+      <img
+        src="Movies/969681/IMG.jpg"
+        alt="Numbers"
+      >
+      <div class="movie-title">
+        Spiderman Brand New Day
+      </div>
     </div>
-
-    <script>
-        function openMovie() {
-            window.open(
-                "https://www.vidking.net/embed/movie/numbers",
-                "_blank"
-            );
-        }
-    </script>
-
+    <!-- Another Movie -->
+    <div class="movie-item" onclick="openMovie('123456')">
+      <img
+        src="Movies/123456/image.jpg"
+        alt="Another Movie"
+      >
+      <div class="movie-title">
+        Another Movie
+      </div>
+    </div>
+  </div>
+  <script>
+    function openMovie(movieId) {
+      const url = `https://www.vidking.net/embed/movie/${movieId}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+  </script>
 </body>
 </html>
